@@ -1,0 +1,14 @@
+clean_build_debug {
+    tasks = [":app:assembleDebug"]
+    cleanup-tasks = ["clean"]
+}
+
+clean_build_release {
+    tasks = [":app:assembleRelease"]
+    cleanup-tasks = ["clean"]
+}
+
+layout_change {
+    tasks = [":app:assembleDebug"]
+    apply-non-abi-change-to = [app/src/main/java/pl/drbear95/androiduioverview/basiccontrolscompose/MainActivity.kt]
+}

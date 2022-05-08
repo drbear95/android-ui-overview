@@ -1,0 +1,14 @@
+clean_build_debug {
+    tasks = [":app:assembleDebug"]
+    cleanup-tasks = ["clean"]
+}
+
+clean_build_release {
+    tasks = [":app:assembleRelease"]
+    cleanup-tasks = ["clean"]
+}
+
+layout_change {
+    tasks = [":app:assembleDebug"]
+    apply-android-layout-change-to = "app/src/main/res/layout/activity_main.xml"
+}
